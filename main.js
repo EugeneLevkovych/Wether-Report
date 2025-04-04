@@ -15,7 +15,6 @@ const createWeatherTemplate = (weatherInfo) => {
 const onSearchFormSubmit = (event) => {
   event.preventDefault();
 
-  const apiKey = "";
   const city = event.currentTarget.elements.weather_input.value.trim();
   if (city === "") {
     alert("Please wright the name of the city");
