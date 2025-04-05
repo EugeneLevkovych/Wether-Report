@@ -34,8 +34,9 @@ const fetchWeatherData = (city) => {
       // document.getElementById('weather-input').value = city;
     })
     .catch((err) => {
-      errorDisplayEl.innerHTML = `<p style="color: red;">City not found</p>`;
+      errorDisplayEl.innerHTML = `<p class="error-text">${err}.City not found</p>`;
       searchFormEl.reset();
+      weatherDisplayEl.innerHTML = "";
     });
 };
 
@@ -47,7 +48,7 @@ const onSearchFormSubmit = (event) => {
     alert("Please write the name of the city");
     return;
   }
-  
+  errorDisplayEl.innerHTML = '';
   fetchWeatherData(city);
 };
 
