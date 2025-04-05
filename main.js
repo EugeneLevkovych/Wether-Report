@@ -4,12 +4,17 @@ const weatherDisplayEl = document.querySelector(".js-weather-display");
 const errorDisplayEl =  document.querySelector('.js-error-display');
 
 const createWeatherTemplate = (weatherInfo) => {
-  return `  <h2>${weatherInfo.name}</h2>
-             <p>Temperature: ${weatherInfo.main.temp}°C</p>
-             <p>Weather: ${weatherInfo.weather[0].description}</p>
-             <img src="https://openweathermap.org/img/wn/${weatherInfo.weather[0].icon}.png" alt="Weather icon">
-            <p>Humidity: ${weatherInfo.main.humidity}%</p>
-             <p>Wind Speed: ${weatherInfo.wind.speed} m/s</p>
+  return `
+   <div class="img-box">
+   <img class="weather-display-img" src="https://openweathermap.org/img/wn/${weatherInfo.weather[0].icon}@2x.png" alt="Weather icon">
+   </div> 
+   <div class="text-box"> 
+     <h2 class="heading">${weatherInfo.name}</h2>
+     <p class="weather-display-text">Temperature: ${weatherInfo.main.temp}°C</p>
+     <p class="weather-display-text">Weather: ${weatherInfo.weather[0].description}</p>         
+     <p class="weather-display-text">Humidity: ${weatherInfo.main.humidity}%</p>
+     <p class="weather-display-text">Wind Speed: ${weatherInfo.wind.speed} m/s</p>
+    </div>
          `;
 };
 
