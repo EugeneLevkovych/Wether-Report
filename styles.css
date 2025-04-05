@@ -1,1 +1,18 @@
 body { background-color: bisque;}
+
+.search-form {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    border: 3px solid;
+    border-radius: 1rem;
+    max-width: 30rem;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+
+.weather-label {
+    font-size: 2.5rem;
+    font-weight: 600;
+}

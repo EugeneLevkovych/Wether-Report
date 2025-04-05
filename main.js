@@ -1,6 +1,7 @@
 const apiKey = 'c8f40d3a3736e508fdb5b271f6f49dd4';
 const searchFormEl = document.querySelector(".js-search-form");
-const weatherDisplayEl = document.querySelector(".weather-display");
+const weatherDisplayEl = document.querySelector(".js-weather-display");
+const errorDisplayEl =  document.querySelector('.js-error-display');
 
 const createWeatherTemplate = (weatherInfo) => {
   return `  <h2>${weatherInfo.name}</h2>
@@ -30,13 +31,14 @@ const onSearchFormSubmit = (event) => {
       return responce.json();
     })
     .then((data) => {
+        console.dir(data);
+        
       const weatherTemplate = createWeatherTemplate(data);
       weatherDisplayEl.innerHTML = weatherTemplate;
     })
     .catch((err) => {
-      if (err.message === 404) {
-        alert("City not found");
-      }
+      errorDisplayEl.innerHTML = `<p style="color: red;">City not found</p>`;
+        searchFormEl.reset();
     });
 };
 searchFormEl.addEventListener("submit", onSearchFormSubmit);
