@@ -65,6 +65,7 @@ body {
 }
 
 .weather-display {
+    min-height: 5rem;
     display: flex;
     padding: 1.25rem 1.5rem;
     border:  var(--main-border);
