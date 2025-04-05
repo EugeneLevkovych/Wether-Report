@@ -1,18 +1,48 @@
+:root {
+    --main-border: 3px solid;
+    --main-border-radius: 1rem;
+}
+
 body { background-color: bisque;}
+
+
 
 .search-form {
     display: flex;
     gap: 2rem;
     flex-direction: column;
-    border: 3px solid;
-    border-radius: 1rem;
+    border:  var(--main-border);
+    border-radius: var(--main-border-radius);  
     max-width: 30rem;
     padding: 2rem;
     margin: 0 auto;
 }
 
 
-.weather-label {
+.search-form-label {
+    text-align: center;
     font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.search-form-input {
+    font-size: 1.5rem;
+    padding: .50rem 1.5rem; 
+    border:  var(--main-border);
+    border-radius: var(--main-border-radius);  
+}
+
+.search-form-button {
+    align-self: flex-end;
+    padding: .75rem 2rem;
+    font-size: 2rem;
     font-weight: 600;
+    border:  var(--main-border);
+    border-radius: var(--main-border-radius);  
+}
+
+.weather-display {
+    padding: .50rem 1.5rem;
+    border:  var(--main-border);
+    border-radius: var(--main-border-radius); 
 }
