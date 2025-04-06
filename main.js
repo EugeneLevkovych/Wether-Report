@@ -1,7 +1,8 @@
-const apiKey = 'c8f40d3a3736e508fdb5b271f6f49dd4';
 const searchFormEl = document.querySelector(".js-search-form");
 const weatherDisplayEl = document.querySelector(".js-weather-display");
 const errorDisplayEl = document.querySelector('.js-error-display');
+const loaderEl = document.querySelector('.loader');
+const apiKey = 'c8f40d3a3736e508fdb5b271f6f49dd4';
 
 const createWeatherTemplate = (weatherInfo) => {
   return `
@@ -31,21 +32,25 @@ const fetchWeatherData = (city) => {
     .then((data) => {
       const weatherTemplate = createWeatherTemplate(data);
       weatherDisplayEl.innerHTML = weatherTemplate;
+      loaderEl.classList.add('is-hidden');
       // document.getElementById('weather-input').value = city;
     })
     .catch((err) => {
       errorDisplayEl.innerHTML = `<p class="error-text">${err}.City not found</p>`;
       searchFormEl.reset();
       weatherDisplayEl.innerHTML = "";
+      loaderEl.classList.add('is-hidden');
     });
 };
 
 const onSearchFormSubmit = (event) => {
   event.preventDefault();
+  loaderEl.classList.remove('is-hidden');
 
   const city = event.currentTarget.elements.weather_input.value.trim();
   if (city === "") {
-    alert("Please write the name of the city");
+    errorDisplayEl.innerHTML = '<p class="error-text">Please write the name of the city</p>'
+    loaderEl.classList.add('is-hidden');
     return;
   }
   errorDisplayEl.innerHTML = '';
@@ -56,7 +61,9 @@ searchFormEl.addEventListener("submit", onSearchFormSubmit);
 
 document.addEventListener("DOMContentLoaded", fetchWeatherData("Kyiv"));
 
-
+// showLoader();
+//loaderEl.classList.remove('is-hidden');
+//loaderEl.classList.add('is-hidden');
 
 // ------------------------------------------------------------------
 // const searchFormEl = document.querySelector(".js-search-form");

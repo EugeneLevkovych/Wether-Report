@@ -34,8 +34,8 @@ body {
 }
 
 .label-span-img {
-    width: 4rem;
-    margin: -1.25rem -.5rem;
+    width: 5rem;
+    margin: -1.5rem -.5rem;
 }
 
 .search-form-label {
@@ -97,3 +97,33 @@ body {
     font-weight: 500;
     text-align: center;
 }
+
+.loader.is-hidden {
+    display: none;
+  }
+
+  .loader{
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    height: 20px;
+    width: 140px;
+    background-image: 
+    linear-gradient(#FFF 20px, transparent 0), 
+    linear-gradient(#FFF 20px, transparent 0), 
+    linear-gradient(#FFF 20px, transparent 0), 
+    linear-gradient(#FFF 20px, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    background-position: 0 0, 40px 0, 80px 0, 120px 0;
+    animation: pgfill 1s linear infinite;
+  }
+  
+  @keyframes pgfill {
+    0% {   background-image: linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    25% {   background-image: linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    50% {   background-image: linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    75% {   background-image: linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FFF 20px, transparent 0); }
+    100% {   background-image: linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0), linear-gradient(#FF3D00 20px, transparent 0); }
+  }
+  
