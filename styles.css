@@ -11,7 +11,7 @@
 body {
     box-sizing: border-box;
     padding: 1rem 0;
-     background-color: bisque;}
+    background-color: bisque;}
 
 
 
@@ -49,7 +49,8 @@ body {
     padding: .50rem 1.5rem; 
     border:  var(--main-border);
     border-radius: var(--main-border-radius);
-    background-color: inherit;  
+    background-color: inherit;
+    transition: all .2s;   
 }
 
 .search-form-input:focus {
@@ -60,16 +61,21 @@ body {
 
 .search-form-button {
     align-self: flex-end;
-    padding: .75rem 2rem;
+    padding: .5rem 1rem;
     font-size: 2rem;
     font-weight: 600;
     background-color: rgb(159, 174, 224);
     border:  var(--main-border);
-    border-radius: var(--main-border-radius);  
+    border-radius: var(--main-border-radius);
+    transition: all .2s;  
 }
 
 .search-form-button:hover {
     background-color: #d6eaf8;
+}
+
+.search-form-button:active {
+    color: orangered;
 }
 
 .weather-display {
@@ -102,6 +108,11 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
+    .search-form-button {
+        font-size: 2rem;
+        font-weight: 600;  
+    }
+
     .weather-display {
         flex-direction: row;    
     }
