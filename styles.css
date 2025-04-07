@@ -19,16 +19,16 @@ body {
     max-width: 23.5rem;
     margin: 0 auto;
     display: flex; 
-    gap: 2rem;
+    gap: 1.5rem;
     flex-direction: column;
     border:  var(--main-border);
     border-radius: var(--main-border-radius);  
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: #ccd1d1;
 }
 
 .heading {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: .5rem;
 }
@@ -110,6 +110,13 @@ body {
     body {
         padding: 1rem 0;
     }
+
+    .search-form {
+        gap: 2rem;
+        max-width: 30rem;
+        padding: 2rem;
+    }
+
     .search-form-button {
         font-size: 2rem;
         font-weight: 600;  
@@ -129,10 +136,7 @@ body {
         width: 10rem;
     }
 
-    .search-form {
-        max-width: 30rem;
-        padding: 2rem;
-    }
+ 
 }
 
 /* -------------------LOADER--------------------------- */
